@@ -7,11 +7,11 @@ class RegisterSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserTI
         fields = ('email', 'password', 'password_repeat')
-        extra_kwargs = {'password': {'write_only': True}}
+        extra_kwargs = {'password': {'write_only': True, 'min_length':5}}
 
     def validate(self, attrs):
         if attrs['password'] != attrs['password_repeat']:
-            raise serializers.ValidationError("Passwords do not match")
+            raise serializers.ValidationError("Пароли не совпадают")
         return attrs
     
     def create(self, validated_data):

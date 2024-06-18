@@ -2,3 +2,6 @@ media
 static
 venv
 .env
+
+
+python.py
