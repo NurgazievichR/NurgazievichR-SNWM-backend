@@ -19,7 +19,7 @@ class UserTI(AbstractBaseUser, PermissionsMixin):
     objects = CustomManager()
 
     def __str__(self) -> str:
-        return f"Email: {self.email},    Username: {self.username}"
+        return f"Email: {self.email}"
     
     def has_perm(self, perm, obj=None):
         return self.is_active and self.is_staff
@@ -28,3 +28,7 @@ class UserTI(AbstractBaseUser, PermissionsMixin):
         return self.is_active and self.is_staff
     
     USERNAME_FIELD = 'email'
+
+    class Meta:
+        verbose_name = 'Пользователь'
+        verbose_name_plural = 'Пользователи'
