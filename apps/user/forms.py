@@ -1,4 +1,3 @@
-from typing import Any
 from django.contrib.auth.forms import UserCreationForm
 
 class CustomUserCreationForm(UserCreationForm):
@@ -11,6 +10,3 @@ class CustomUserCreationForm(UserCreationForm):
             user.save()
         return user
 
-
-    
-        
