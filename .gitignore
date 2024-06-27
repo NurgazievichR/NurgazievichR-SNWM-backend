@@ -3,5 +3,4 @@ static
 venv
 .env
 
-
-python.py
+__pycache__/
